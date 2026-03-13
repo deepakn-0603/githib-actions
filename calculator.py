@@ -25,3 +25,7 @@ class Calculator:
         if self.num2==0:
             raise ZeroDivisionError("Cannot divide by zero")
         return self.num1/self.num2
+    
+    def sqrt(self):
+        self._validate()
+        return self.num1 ** self.num2

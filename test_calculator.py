@@ -18,4 +18,4 @@ def test_divide():
 
 def test_sqrt():
     calc = Calculator(10, 5)
-    assert calc.sqrt == 100
+    assert calc.sqrt() == 100

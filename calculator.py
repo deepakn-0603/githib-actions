@@ -1,35 +1,27 @@
-# Calculator project
 class Calculator:
-    def __init__(self, num1, num2):
-        self.num1 = num1
-        self.num2 = num2
+
+    def __init__(self,num1,num2):
+        self.num1=num1
+        self.num2=num2
+
+    def _validate(self):
+        if not isinstance(self.num1,(int,float)) or not isinstance(self.num2,(int,float)):
+            raise ValueError("Provide numeric values")
 
     def add(self):
-        if not isinstance(self.num1, int) or not isinstance(self.num2, int):
-            return "Please... Provide a Number"
-        else:
-            return self.num1 + self.num2
+        self._validate()
+        return self.num1+self.num2
 
     def sub(self):
-        if not isinstance(self.num1, int) or not isinstance(self.num2, int):
-            return "Please... Provide a Number"
-        else:
-            return self.num1 - self.num2
+        self._validate()
+        return self.num1-self.num2
 
     def mul(self):
-        if not isinstance(self.num1, int) or not isinstance(self.num2, int):
-            return "Please... Provide a Number"
-        else:
-            return self.num1 * self.num2
-    
-    def sqrt(self):
-        if not isinstance(self.num1, int) or not isinstance(self.num2, int):
-            return "Please... Provide a Number"
-        else:
-            return self.num1 ** self.num2
+        self._validate()
+        return self.num1*self.num2
 
     def divide(self):
-        if not isinstance(self.num1, int) or not isinstance(self.num2, int):
-            return "Please... Provide a Number"
-        else:
-            return self.num1 / self.num2
+        self._validate()
+        if self.num2==0:
+            raise ZeroDivisionError("Cannot divide by zero")
+        return self.num1/self.num2

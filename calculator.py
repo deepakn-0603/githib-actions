@@ -32,9 +32,3 @@ class Calculator:
             return "Please... Provide a Number"
         else:
             return self.num1 / self.num2
-calc = Calculator(10, 5)
-
-print(calc.add())
-print(calc.sub())
-print(calc.mul())
-print(calc.power())
